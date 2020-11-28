@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.content {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(45deg, #9e4dff, #e9ccf8);
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  top: -150%;
+  transition: 1s ease;
+  i {
+    padding-top: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    &:before {
+      margin-right: 10px;
+      margin-top: 10px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  ul {
+    list-style: none;
+    display: block;
+    flex-direction: row;
+    align-self: center;
+    padding-left: 5px;
+    li {
+      color: white;
+      border-radius: 20px;
+      width: 100%;
+      transition: 0.3s ease;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        border-radius: 20px;
+        width: 700px;
+        padding: 0 20px;
+        transition: 0.2s ease;
+        &:hover {
+          color: rgb(220, 174, 227);
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
+div.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  .ls {
+    font-size: 30px;
+    line-height: 70px;
+    padding-top: 5px;
+    width: 50%;
+    padding-left: 30px;
+    a {
+      text-decoration: none;
+      color: black;
+      position: relative;
+      transition: 0.3s ease;
+      padding: 10px;
+      z-index: 1;
+      &::before {
+        content: "";
+        position: absolute;
+        height: inherit;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, #9e4dff, #e9ccf8);
+        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.3s ease;
+        border-radius: 3px;
+      }
+      &:hover {
+        color: #fff;
+      }
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+  .rs {
+    width: 50%;
+    font-size: 27px;
+    padding: 20px 20px 0 0;
+    span {
+      float: right;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      justify-content: center;
+      margin-left: 0px;
+      cursor: pointer;
+      &:hover {
+        font-size: 35px;
+        cursor: pointer;
+        label i {
+          &:hover::before {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    span.blog {
+      font-size: 22px;
+      color: orange;
+      &:hover {
+        font-size: 35px;
+      }
+    }
+    span.mode {
+      color: rgb(47, 47, 163);
+      cursor: pointer;
+    }
+    span.navbar {
+      color: #646464;
+      cursor: pointer;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+#nav:checked ~ nav.content {
+  top: 0;
+}
+#nav:checked ~ div.nav .ls a {
+  color: #fff;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  margin-left: 5%;
+  margin-top: 60px;
+  justify-content: space-between;
+  .sec1 {
+    font-size: 30px;
+    letter-spacing: normal;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+    p {
+      font-size: 18px;
+      font-weight: normal;
+    }
+    h6{
+      padding-top: 60px;
+      font-weight: 500;
+      a{
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+  .sec2{
+    padding-right: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      top: 0;
+    }
+  }
+}
+
+.page-2{
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5%;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: normal;
+  p{
+    font-size: 18px;
+  }
+  .cards{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    .c{
+      width: 100px;
+      img{
+        
+      }
+    }
+  }
+}
+
+
+@media (max-width: 392px) {
+  .content {
+    font-size: 15px;
+  }
+  .rs {
+    span {
+      font-size: 25px;
+    }
+    span.blog {
+      font-size: 18px;
+    }
+  }
+}
